@@ -1,9 +1,12 @@
 module RISCV_Single_Cycle (
     clk,
-    reset
+    rst_n,
+    Instruction_out_top
 );
+
     input clk;
-    input reset;
+    input rst_n;
+    output [31:0] Instruction_out_top;
 
     wire [31:0] pc, next_pc, instr;
     wire [4:0] rs1, rs2, rd;
@@ -22,7 +25,7 @@ module RISCV_Single_Cycle (
     wire [31:0] mem_out;
 
     // Instruction memory
-    IMEM imem (
+    IMEM IMEM_inst (
         .addr(pc),
         .instr(instr)
     );
@@ -30,7 +33,7 @@ module RISCV_Single_Cycle (
     // Program Counter
     Program_Counter pc_reg (
         .clk(clk),
-        .reset(reset),
+        .reset(~rst_n),
         .next_pc(next_pc),
         .pc(pc)
     );
@@ -101,7 +104,7 @@ module RISCV_Single_Cycle (
     );
 
     // Data memory
-    DMEM dmem (
+    DMEM DMEM_inst (
         .clk(clk),
         .addr(alu_result),
         .write_data(reg_data2),

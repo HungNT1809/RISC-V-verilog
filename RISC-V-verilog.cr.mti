@@ -1,11 +1,4 @@
-D:/ModelSim-projects/Program_Counter.v {1 {vlog -work work -stats=none D:/ModelSim-projects/Program_Counter.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Program_Counter
-
-Top level modules:
-	Program_Counter
-
-} {} {}} D:/ModelSim-projects/DMEM.v {1 {vlog -work work -stats=none D:/ModelSim-projects/DMEM.v
+D:/ModelSim-projects/DMEM.v {1 {vlog -work work -stats=none D:/ModelSim-projects/DMEM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module DMEM
 
