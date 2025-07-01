@@ -1,0 +1,28 @@
+module RegisterFile (
+    input logic clk,
+    input logic we,                         // write enable
+    input logic [4:0] rs1, rs2, rd,         // read and write register addresses
+    input logic [31:0] rd_data,             // data to write
+    output logic [31:0] rs1_data, rs2_data  // data read from rs1 and rs2
+);
+    logic [31:0] regs [0:31];
+
+    // Read ports (combinational)
+    assign rs1_data = regs[rs1];
+    assign rs2_data = regs[rs2];
+
+    // Write port (synchronous)
+    always_ff @(posedge clk) begin
+        if (we && rd != 5'd0) begin
+            regs[rd] <= rd_data;
+        end
+    end
+
+    // Optional: Initialize registers for debug
+    integer i;
+    initial begin
+        for (i = 0; i < 32; i = i + 1)
+            regs[i] = 32'b0;
+    end
+endmodule
+
