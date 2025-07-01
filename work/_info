@@ -10,23 +10,23 @@ z2
 cModel Technology
 Z0 dD:/ModelSim-projects
 vALU
-Z1 !s110 1751381585
+Z1 !s110 1751384299
 !i10b 1
-!s100 X8WVXSEe7koNm2@6?gdER2
+!s100 >Bzo:FeG<[8WZZYZSX@In3
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I7KE@iHY<;NPJVnIUY0fZ43
+IHX]b0dFLCY3ZH2[J9QRnP2
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1751381256
+w1751384089
 8D:/ModelSim-projects/ALU.v
 FD:/ModelSim-projects/ALU.v
-!i122 27
-Z4 L0 1 30
+!i122 49
+Z4 L0 2 20
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1751381585.000000
+Z6 !s108 1751384299.000000
 !s107 D:/ModelSim-projects/ALU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/ModelSim-projects/ALU.v|
 !i113 1
@@ -34,18 +34,18 @@ Z7 o-work work
 Z8 tCvgOpt 0
 n@a@l@u
 vALU_decoder
-Z9 !s110 1751381586
+R1
 !i10b 1
-!s100 oFZ2z^Hd_;DGI?YbE>0J91
+!s100 6XCCM>jXG=DE=]jg?1`@c0
 R2
-I?PTR]nT;U<mbzJ`eIQe9:2
+IB0[:8m[KUM^REiDio7OOC0
 R3
 R0
-w1751380954
+w1751384176
 8D:/ModelSim-projects/ALU_decoder.v
 FD:/ModelSim-projects/ALU_decoder.v
-!i122 28
-R4
+!i122 50
+Z9 L0 2 23
 R5
 r1
 !s85 0
@@ -58,23 +58,23 @@ R7
 R8
 n@a@l@u_decoder
 vBranch_Comp
-R9
+Z10 !s110 1751384300
 !i10b 1
-!s100 2WIDimO:J:dn:ho0b]?PB3
+!s100 =YOSEH@EbNCZPmk7B9OaG1
 R2
-I[A61P17zQOei4=0c@8W[81
+I]^ePHe9mI0]PfA8M7Pe_^0
 R3
 R0
-w1751381030
+w1751384186
 8D:/ModelSim-projects/Branch_Comp.v
 FD:/ModelSim-projects/Branch_Comp.v
-!i122 31
-Z10 L0 1 20
+!i122 53
+L0 2 7
 R5
 r1
 !s85 0
 31
-Z11 !s108 1751381586.000000
+R6
 !s107 D:/ModelSim-projects/Branch_Comp.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/ModelSim-projects/Branch_Comp.v|
 !i113 1
@@ -82,23 +82,23 @@ R7
 R8
 n@branch_@comp
 vcontrol_unit
-R9
+R1
 !i10b 1
-!s100 F9Rf=RKDIA1Cg]Nff0h2A2
+!s100 ObKFGjRc0`?kDAe<aL1c63
 R2
-I^^g8l2VQ4B]olnIkEd`m]2
+ISieenR:gTl4Q:a<5kPM]13
 R3
 R0
-w1751381082
+w1751384195
 8D:/ModelSim-projects/control_unit.v
 FD:/ModelSim-projects/control_unit.v
-!i122 30
-L0 1 103
+!i122 52
+L0 2 32
 R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 D:/ModelSim-projects/control_unit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/ModelSim-projects/control_unit.v|
 !i113 1
@@ -107,16 +107,16 @@ R8
 vDMEM
 R1
 !i10b 1
-!s100 HHd:5_kHo0Yo5_W;laRzH2
+!s100 f3o`1FH]fbUaIiH5Y@=gJ3
 R2
-IQ`YFodeZg:ZM4L::Vz17D3
+IZBg>EUHm>UEBhUDc;E;HG0
 R3
 R0
-w1751380999
+w1751384213
 8D:/ModelSim-projects/DMEM.v
 FD:/ModelSim-projects/DMEM.v
-!i122 25
-R4
+!i122 47
+L0 2 21
 R5
 r1
 !s85 0
@@ -131,16 +131,16 @@ n@d@m@e@m
 vIMEM
 R1
 !i10b 1
-!s100 XGYaM:SaRj7bf>D1BTZUN0
+!s100 E[WB8HcDaR6kd9egBmQBP3
 R2
-ITI]LiKjaRSzI4oz2LC=c62
+IS=l^dXUPlh6WgGg`<KjLc2
 R3
 R0
-w1751381181
+w1751384223
 8D:/ModelSim-projects/IMEM.v
 FD:/ModelSim-projects/IMEM.v
-!i122 24
-R10
+!i122 46
+L0 2 10
 R5
 r1
 !s85 0
@@ -153,42 +153,65 @@ R7
 R8
 n@i@m@e@m
 vImm_Gen
-R9
+R1
 !i10b 1
-!s100 XR1lE9T]@hlbz<74QRh@W1
+!s100 Kf@?CMmJk0[j:Sa<R?A^S3
 R2
-IBz8WKDa;STo95<KFzm]z?0
+II50V515Hk]4bR5h?JAGDG3
 R3
 R0
-w1751381148
+w1751384233
 8D:/ModelSim-projects/Imm_Gen.v
 FD:/ModelSim-projects/Imm_Gen.v
-!i122 29
-L0 1 37
+!i122 51
+L0 2 16
 R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 D:/ModelSim-projects/Imm_Gen.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/ModelSim-projects/Imm_Gen.v|
 !i113 1
 R7
 R8
 n@imm_@gen
+vmain_decoder
+R10
+!i10b 1
+!s100 IO`IU7mFH54[=cT:CFbL:0
+R2
+IVTi5^YBkhY9dDA`N5hEhY3
+R3
+R0
+w1751384253
+8D:/ModelSim-projects/main_decoder.v
+FD:/ModelSim-projects/main_decoder.v
+!i122 55
+R9
+R5
+r1
+!s85 0
+31
+Z11 !s108 1751384300.000000
+!s107 D:/ModelSim-projects/main_decoder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ModelSim-projects/main_decoder.v|
+!i113 1
+R7
+R8
 vProgram_Counter
 R1
 !i10b 1
-!s100 B?DOkXC2Q=<12M=iOiIA23
+!s100 bezOzRPJ67BBXaKQWj[241
 R2
-Id0UR;<8bKCJ8TNP1F?bMW3
+I_]Y3<@^Ak5]l>I3;znB6M2
 R3
 R0
-w1751380877
+w1751384263
 8D:/ModelSim-projects/Program_Counter.v
 FD:/ModelSim-projects/Program_Counter.v
-!i122 23
-R10
+!i122 45
+L0 2 11
 R5
 r1
 !s85 0
@@ -203,16 +226,16 @@ n@program_@counter
 vRegisterFile
 R1
 !i10b 1
-!s100 a4mdeROlW``F^j7XHahSW0
+!s100 PN^dKmjNXgjEPBnDT4O;B3
 R2
-I_Sil?98JBA^k@KH2g__b62
+I90a2Dm0BVDGT9Pik?h@C71
 R3
 R0
-w1751381212
+w1751384273
 8D:/ModelSim-projects/RegisterFile.v
 FD:/ModelSim-projects/RegisterFile.v
-!i122 26
-L0 1 34
+!i122 48
+R4
 R5
 r1
 !s85 0
@@ -224,8 +247,32 @@ R6
 R7
 R8
 n@register@file
+vRISCV_Single_Cycle
+R10
+!i10b 1
+!s100 lZfaHmJbC]3HEYGonEUi[1
+R2
+I0k<dzLj935M>U60jYbjIz1
+R3
+R0
+w1751384289
+Z12 8D:/ModelSim-projects/RISCV_top_level.v
+Z13 FD:/ModelSim-projects/RISCV_top_level.v
+!i122 54
+L0 2 103
+R5
+r1
+!s85 0
+31
+R11
+Z14 !s107 D:/ModelSim-projects/RISCV_top_level.v|
+Z15 !s90 -reportprogress|300|-work|work|-stats=none|D:/ModelSim-projects/RISCV_top_level.v|
+!i113 1
+R7
+R8
+n@r@i@s@c@v_@single_@cycle
 vRISCV_top_level
-R9
+!s110 1751381586
 !i10b 1
 !s100 mQHZB85zVKjYKmDjC4Xih2
 R2
@@ -233,17 +280,17 @@ I05^@6d8`fIEDaG3JZEWzL2
 R3
 R0
 w1751381582
-8D:/ModelSim-projects/RISCV_top_level.v
-FD:/ModelSim-projects/RISCV_top_level.v
+R12
+R13
 !i122 32
 L0 1 121
 R5
 r1
 !s85 0
 31
-R11
-!s107 D:/ModelSim-projects/RISCV_top_level.v|
-!s90 -reportprogress|300|-work|work|-stats=none|D:/ModelSim-projects/RISCV_top_level.v|
+!s108 1751381586.000000
+R14
+R15
 !i113 1
 R7
 R8

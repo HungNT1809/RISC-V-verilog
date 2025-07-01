@@ -1,21 +1,13 @@
-module Program_Counter (
-    clk,
-    reset,
-    next_pc,
-    pc
+// --- File: Program_Counter.v ---
+module Program_Counter(
+    input        clk,
+    input        rst_n,
+    input [31:0] pc_next,
+    output reg [31:0] pc
 );
-    input clk;
-    input reset;
-    input [31:0] next_pc;
-    output [31:0] pc;
-
-    reg [31:0] pc;
-
-    always @ (posedge clk or posedge reset) begin
-        if (reset)
-            pc <= 32'b0;
-        else
-            pc <= next_pc;
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) pc <= 0;
+        else pc <= pc_next;
     end
 endmodule
 

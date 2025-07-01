@@ -1,102 +1,32 @@
-module control_unit (
-    opcode,
-    alu_op,
-    alu_src,
-    mem_to_reg,
-    reg_write,
-    mem_read,
-    mem_write,
-    branch,
-    jump,
-    pc_src
+// --- File: control_unit.v ---
+module control_unit(
+    input  [6:0] opcode,
+    output reg Branch,
+    output reg MemRW,
+    output reg MemtoReg,
+    output reg [1:0] ALUOp,
+    output reg ALUSrc,
+    output reg RegWrite
 );
-    input [6:0] opcode;
-    output [1:0] alu_op;
-    output [1:0] alu_src;
-    output mem_to_reg;
-    output reg_write;
-    output mem_read;
-    output mem_write;
-    output branch;
-    output jump;
-    output [1:0] pc_src;
-
-    reg [1:0] alu_op;
-    reg [1:0] alu_src;
-    reg mem_to_reg;
-    reg reg_write;
-    reg mem_read;
-    reg mem_write;
-    reg branch;
-    reg jump;
-    reg [1:0] pc_src;
-
     always @(*) begin
-        alu_op      = 2'b00;
-        alu_src     = 2'b00;
-        mem_to_reg  = 1'b0;
-        reg_write   = 1'b0;
-        mem_read    = 1'b0;
-        mem_write   = 1'b0;
-        branch      = 1'b0;
-        jump        = 1'b0;
-        pc_src      = 2'b00;
-
-        case (opcode)
-            7'b0110011: begin
-                alu_op      = 2'b10;
-                alu_src     = 2'b00;
-                reg_write   = 1'b1;
+        // Default values
+        Branch = 0; MemRW = 0; MemtoReg = 0;
+        ALUOp = 2'b00; ALUSrc = 0; RegWrite = 0;
+        case(opcode)
+            7'b0110011: begin // R-type
+                RegWrite = 1; ALUOp = 2'b10;
             end
-
-            7'b0010011: begin
-                alu_op      = 2'b10;
-                alu_src     = 2'b01;
-                reg_write   = 1'b1;
+            7'b0000011: begin // LW
+                RegWrite = 1; ALUSrc = 1; MemtoReg = 1;
             end
-
-            7'b0000011: begin
-                alu_op      = 2'b00;
-                alu_src     = 2'b01;
-                mem_to_reg  = 1'b1;
-                reg_write   = 1'b1;
-                mem_read    = 1'b1;
+            7'b0100011: begin // SW
+                ALUSrc = 1; MemRW = 1;
             end
-
-            7'b0100011: begin
-                alu_op      = 2'b00;
-                alu_src     = 2'b01;
-                mem_write   = 1'b1;
+            7'b1100011: begin // BEQ
+                Branch = 1; ALUOp = 2'b01;
             end
-
-            7'b1100011: begin
-                alu_op      = 2'b01;
-                branch      = 1'b1;
-                pc_src      = 2'b01;
-            end
-
-            7'b1101111: begin
-                alu_src     = 2'b01;
-                reg_write   = 1'b1;
-                jump        = 1'b1;
-                pc_src      = 2'b01;
-            end
-
-            7'b1100111: begin
-                alu_src     = 2'b01;
-                reg_write   = 1'b1;
-                jump        = 1'b1;
-                pc_src      = 2'b10;
-            end
-
-            7'b0110111,
-            7'b0010111: begin
-                alu_src     = 2'b01;
-                reg_write   = 1'b1;
-            end
-
-            default: begin
-                // gi? m?c ??nh
+            7'b0010011: begin // I-type (ADDI)
+                RegWrite = 1; ALUSrc = 1; ALUOp = 2'b10;
             end
         endcase
     end

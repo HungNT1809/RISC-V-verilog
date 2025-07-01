@@ -1,22 +1,12 @@
-module IMEM (
-    input logic [31:0] addr,
-    output logic [31:0] instr
+// --- File: IMEM.v ---
+module IMEM(
+    input  [31:0] address,
+    output [31:0] instruction
 );
-    logic [31:0] memory [0:255];  // 256 words = 1KB
+    reg [31:0] memory [0:127]; // 128 dòng = 128 words
 
-    initial begin
-        // Load instruction memory here
-        // Example: load from a file (commented out for now)
-        // $readmemh("imem.hex", memory);
+    assign instruction = memory[address[11:2]];
 
-        // Hardcoded sample program (optional)
-        memory[0] = 32'h00000293; // addi x5, x0, 0
-        memory[1] = 32'h00100313; // addi x6, x0, 1
-        memory[2] = 32'h0062b3b3; // add x7, x5, x6
-        memory[3] = 32'h0072a023; // sw x7, 0(x5)
-        memory[4] = 32'h00000013; // nop
-    end
-
-    assign instr = memory[addr[9:2]]; // Word-aligned access (ignores byte offset)
+    initial $readmemh("./mem/imem.hex", memory);
 endmodule
 

@@ -1,35 +1,22 @@
-module RegisterFile (
-    clk,
-    we,
-    rs1,
-    rs2,
-    rd,
-    rd_data,
-    rs1_data,
-    rs2_data
+// --- File: RegisterFile.v ---
+module RegisterFile(
+    input         clk,
+    input         regwrite,
+    input  [4:0]  rs1,
+    input  [4:0]  rs2,
+    input  [4:0]  rd,
+    input  [31:0] writedata,
+    output [31:0] readdata1,
+    output [31:0] readdata2
 );
-    input clk;
-    input we;
-    input [4:0] rs1, rs2, rd;
-    input [31:0] rd_data;
-    output [31:0] rs1_data, rs2_data;
-
-    reg [31:0] regs [0:31];
-    wire [31:0] rs1_data, rs2_data;
-
-    assign rs1_data = regs[rs1];
-    assign rs2_data = regs[rs2];
-
+    reg [31:0] registers [0:31];
     always @(posedge clk) begin
-        if (we && rd != 5'd0) begin
-            regs[rd] <= rd_data;
-        end
+        if (regwrite && rd != 0)
+            registers[rd] <= writedata;
     end
-
+    assign readdata1 = (rs1 != 0) ? registers[rs1] : 0;
+    assign readdata2 = (rs2 != 0) ? registers[rs2] : 0;
     integer i;
-    initial begin
-        for (i = 0; i < 32; i = i + 1)
-            regs[i] = 32'b0;
-    end
+    initial for (i = 0; i < 32; i = i + 1) registers[i] = 0;
 endmodule
 

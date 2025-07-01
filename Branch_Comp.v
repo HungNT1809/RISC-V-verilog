@@ -1,21 +1,9 @@
-module Branch_Comp (
-    rs1,
-    rs2,
-    branch,
-    zero
+// --- File: Branch_Comp.v ---
+module Branch_Comp(
+    input  [31:0] a,
+    input  [31:0] b,
+    output        eq
 );
-    input [31:0] rs1;
-    input [31:0] rs2;
-    input branch;
-    output zero;
-
-    reg zero;
-
-    always @(*) begin
-        if (branch && (rs1 == rs2))
-            zero = 1'b1;
-        else
-            zero = 1'b0;
-    end
+    assign eq = (a == b);
 endmodule
 

@@ -1,10 +1,17 @@
 module Branch_Comp (
-    input logic [31:0] rs1,
-    input logic [31:0] rs2,
-    input logic branch,
-    output logic zero
+    rs1,
+    rs2,
+    branch,
+    zero
 );
-    always_comb begin
+    input [31:0] rs1;
+    input [31:0] rs2;
+    input branch;
+    output zero;
+
+    reg zero;
+
+    always @(*) begin
         if (branch && (rs1 == rs2))
             zero = 1'b1;
         else

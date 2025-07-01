@@ -3,9 +3,10 @@ module RISCV_Single_Cycle (
     rst_n,
     Instruction_out_top
 );
-    input clk,
-    input rst_n,
-    output [31:0] Instruction_out_top
+
+    input clk;
+    input rst_n;
+    output [31:0] Instruction_out_top;
 
     wire [31:0] pc, next_pc, instr;
     wire [4:0] rs1, rs2, rd;
