@@ -1,4 +1,4 @@
-module RISCV_top_level (
+module RISCV_Single_Cycle (
     clk,
     reset
 );
